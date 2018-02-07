@@ -1,0 +1,155 @@
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                    <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                            <i class="ti-server"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers" id="tokensNum">
+                                            <p>Tokens</p>
+                                            {{tokens}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <!-- <i class="ti-reload"></i>                                         <button class="btn btn-primary btn-sm" (click)="buyMore()" >Buy More tokens</button> -->
+                                        <button class="btn btn-primary btn-sm" (click)="buyMore()" >Buy More tokens</button>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                    <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                            <i class="ti-wallet"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers" id="rewardNum">
+                                            <p>Rewards</p>
+                                            {{reward}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-reload"></i> 
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="icon-big icon-danger text-center">
+                                    <i class="ti-arrow-down"></i>
+                                </div>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                    <p>Bet</p>
+                                    <input type="number" min="5" [(ngModel)]=bet class="col-xs-7">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                                <i class="ti-reload"></i> you don't bet anything, you won't win anything
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6 text-center">
+                <div class="card">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-xs-10">
+                                <!-- <div class="icon-big icon-danger text-center">
+                                    <i class="ti-arrow-down"></i>
+                                </div> -->
+                                <form #catForm (ngSubmit)="selectCategory(catForm)">
+                                    <div class="form-group">
+                                        <label for="category">select category</label>
+                                        <select class="form-control" name="cat" ngModel #cat="ngModel" >
+                                          <option ng-selected='true' value="candies">Candies</option>
+                                          <option value="numbers">Numbers</option>
+                                          <option value="fruits">Fruits</option>
+
+                                        </select>
+                                      </div>
+                                      <button class="text-center btn btn-sm btn-primary">select</button>
+                                </form>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="numbers">
+                                  <!-- <p>Category</p> -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <hr />
+                            <div class="stats">
+                               <p>{{category}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+            
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Play Now</h4>
+                        <p class="category">Test your Luck</p>
+                    </div>
+                    <div class="content">
+                        <img id="slotGif"  src="../assets/img/sm.gif" class="center-block">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div  height=100px width=100px class="col-lg-2" id="slot-im" ><img  height=100px width=100px  id="leftSlot" class="slots img-thumbnail img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""></div>
+                            <div  height=100px width=100px class="col-lg-2" id="slot-im"><img  height=100px width=100px  id="middleSlot" class="slots img-thumbnail img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""></div>
+                            <div  height=100px width=100px class="col-lg-2" id="slot-im"><img  height=100px width=100px id="rightSlot" class="slots img-thumbnail img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""></div>
+                            <div  class="col-lg-3"></div>
+                        </div>
+                        <br><br>
+                        
+                        <button id="playBtn" class="btn btn-lg btn-success center-block" (click)="playGame()">Play Now</button> <br>
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>

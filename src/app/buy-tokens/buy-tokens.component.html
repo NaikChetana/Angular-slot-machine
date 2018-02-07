@@ -1,0 +1,25 @@
+<div class="card text-center">
+    <div class="card-header">
+        1 token for 2 reward points 
+    </div>
+    <div class="card-block">
+      <h4 class="card-title">Your Current Reward Points : {{reward}} and Tokens : {{tokens}}</h4>
+      <br><br>
+      
+          <div class="card-body">
+              <form #buyForm (ngSubmit)="buy(buyForm)" class="form-inline">
+                  <label class="sr-only" for="inlineFormInput">Points</label>
+                  <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" name="ponits" ngModel #points="ngModel"   placeholder="Enter Points">
+                  <button type="submit" class="btn btn-primary">Buy</button>
+                </form>
+          </div>
+      
+<br><br>
+      Buy more Tokens
+      <!-- <a href="#" class="btn btn-primary">Buy</a> -->
+    </div>
+    <br><br>
+    <div class="card-footer text-muted">
+      If you never try you'll never know
+    </div>
+  </div>
