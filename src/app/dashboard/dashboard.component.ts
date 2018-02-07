@@ -76,19 +76,23 @@ else{
       $(".playBtn").show();
       $( "#playBtn" ).text("Play Again");
       let sum;
-      if(val.leftItem.item_id.N==val.midItem.item_id.N && val.leftItem.item_id.N==val.rightItem.item_id.N){
-       this.amount=100;
-       alert("You've Won...Keep playing for more rewards")
+      // if(val.leftItem.item_id.N==val.midItem.item_id.N && val.leftItem.item_id.N==val.rightItem.item_id.N){
+      //  this.amount=100;
+      //  alert("You've Won...Keep playing for more rewards")
 
+      // }
+      // else if(val.leftItem.item_id.N==val.midItem.item_id.N ||val.leftItem.item_id.N==val.rightItem.item_id.N 
+      // ||val.midItem.item_id.N==val.rightItem.item_id.N ){
+      //   this.amount=50;
+      // }
+      // else{
+      //   this.amount=0;
+      // }
+    //  this.reward=this.reward+this.amount*this.bet*0.2;
+      this.reward=this.reward+val.Rewards;
+      if(val.isWinner){
+        alert("You've Won...Keep playing for more rewards")
       }
-      else if(val.leftItem.item_id.N==val.midItem.item_id.N ||val.leftItem.item_id.N==val.rightItem.item_id.N 
-      ||val.midItem.item_id.N==val.rightItem.item_id.N ){
-        this.amount=50;
-      }
-      else{
-        this.amount=0;
-      }
-      this.reward=this.reward+this.amount*this.bet*0.2;
       if(this.reward>this.hs){
         this.hs=this.reward;
       }

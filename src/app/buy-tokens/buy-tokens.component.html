@@ -9,7 +9,7 @@
           <div class="card-body">
               <form #buyForm (ngSubmit)="buy(buyForm)" class="form-inline">
                   <label class="sr-only" for="inlineFormInput">Points</label>
-                  <input type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" name="ponits" ngModel #points="ngModel"   placeholder="Enter Points">
+                  <input min="0" type="number" class="form-control mb-2 mr-sm-2 mb-sm-0" name="ponits" ngModel #points="ngModel"   placeholder="Enter Points">
                   <button type="submit" class="btn btn-primary">Buy</button>
                 </form>
           </div>
