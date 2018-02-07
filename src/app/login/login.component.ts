@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,private auth_service:AuthorisationService) { }
 
 
+  signup(){
+      this.router.navigate(['signup'])
+  }
   login(loginForm:NgForm) {
     var email =loginForm[0].value;
     var password =loginForm[1].value;
