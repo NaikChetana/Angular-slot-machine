@@ -62,6 +62,9 @@ export class NavbarComponent implements OnInit{
             body.classList.remove('nav-open');
         }
     }
+    goUser(){
+        this.router.navigate(['user']);
+    }
 
     logOut(){
         this.auth_service.userPool.getCurrentUser().signOut();
@@ -71,7 +74,9 @@ export class NavbarComponent implements OnInit{
     deleteAccount(){
         this.auth_service.deleteUser().subscribe(val=>{
             console.log(val);
+            alert('account successfully deleted');
+            this.router.navigate(['home']);
         });
-        this.router.navigate(['home']);
+        
     }
 }
