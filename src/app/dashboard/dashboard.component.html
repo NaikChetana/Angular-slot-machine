@@ -94,9 +94,20 @@
                                 </div> -->
                                 <form #catForm (ngSubmit)="selectCategory(catForm)">
                                     <div class="form-group">
+                                            <!-- <div class="input-group mb-3">
+                                                    <select class="custom-select" id="inputGroupSelect02">
+                                                      <option selected>Choose...</option>
+                                                      <option value="1">One</option>
+                                                      <option value="2">Two</option>
+                                                      <option value="3">Three</option>
+                                                    </select>
+                                                    </div> -->
+
+                                                  
                                         <label for="category">select category</label>
-                                        <select class="form-control" name="cat" ngModel #cat="ngModel" >
-                                          <option ng-selected='true' value="candies">Candies</option>
+                                        <select class="form-control custom-select" name="cat" ngModel #cat="ngModel" value="candies">
+                        
+                                          <option selected value="candies">Candies</option>
                                           <option value="numbers">Numbers</option>
                                           <option value="fruits">Fruits</option>
 
