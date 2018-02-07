@@ -69,7 +69,9 @@ export class NavbarComponent implements OnInit{
     }
 
     deleteAccount(){
-        this.auth_service.deleteUser();
+        this.auth_service.deleteUser().subscribe(val=>{
+            console.log(val);
+        });
         this.router.navigate(['home']);
     }
 }

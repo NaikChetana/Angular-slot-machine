@@ -51,6 +51,7 @@ export class AuthorisationService {
 
   private  API_PROFILE_URL="https://rqfjpfrte1.execute-api.ap-south-1.amazonaws.com/prod/profile";
   private API_EDIT_PROFILE_URL="https://rqfjpfrte1.execute-api.ap-south-1.amazonaws.com/prod/userprofile";
+  private API_DELETE_USER="https://rqfjpfrte1.execute-api.ap-south-1.amazonaws.com/prod/userprofile"
   private API_SLOT_RESULTS_URL="https://84ztkyuwvc.execute-api.ap-south-1.amazonaws.com/prod/slot"
   private API_GET_TOKENS_URL="https://4vgbel14rd.execute-api.ap-south-1.amazonaws.com/prod/gettokens";
   private API_SAVE_TOKENs_URL="https://4vgbel14rd.execute-api.ap-south-1.amazonaws.com/prod/savetokendetails"
@@ -96,6 +97,12 @@ export class AuthorisationService {
 
   public deleteUser(){
 
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Authorization',this.token);
+    return this.http.delete(this.API_DELETE_USER, {headers: headers})
+            .map((res) => res.json())
+            .catch((err:any)=>Observable.throw(err.json().error||'server error'));
   }
 
 
